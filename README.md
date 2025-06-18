@@ -1,18 +1,15 @@
-<h1 align="center">Hi 👋, I'm Amrit Lal Paswan</h1>
-<h3 align="center">A passionate techie from India</h3>
+<h1 align="left">Hi, I'm Amrit Lal Paswan</h1>
+<h3 align="left">A developer and designer</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=amritemperor123&label=Profile%20views&color=0e75b6&style=flat" alt="amritemperor123" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=amritemperor123&label=Profile%20views&color=0e75b6&style=flat" alt="amritemperor123" /> </p>
 
-- 🌱 I’m currently learning **Full-Stack Web Development, Machine Learning and Automation**
+- I do MERN stack development, Machine Learning, Frontend Development, Web Designing, and 3D Moedlling.
 
-- 💬 Ask me about **Basics of programming languages and anything on how any kind of aircraft operates**
-
-- 📫 How to reach me **amritpaswan5952@gmail.com**
-
-- ⚡ Fun fact **Though I'm a Computer Science & Engineering student, I have better grip on subjects like aviation and aeronautics.**
+- Interests? Anything that works as an engine. And flying metals.
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
+  amritpaswan5952@gmail.com
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
