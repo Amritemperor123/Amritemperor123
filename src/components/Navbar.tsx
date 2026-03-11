@@ -46,16 +46,18 @@ export const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`text-xs uppercase tracking-[0.2em] transition-colors relative section-kicker ${
+              className={`text-xs uppercase tracking-[0.2em] transition-colors relative section-kicker group ${
                 active === item ? "text-zinc-100" : "text-zinc-400 hover:text-zinc-100"
               }`}
             >
               {item}
-              {active === item && (
+              {active === item ? (
                 <motion.div
                   layoutId="activeNav"
                   className="absolute -bottom-2 left-0 h-[1px] w-full bg-zinc-200/80"
                 />
+              ) : (
+                <span className="absolute -bottom-2 left-0 h-[1px] w-full bg-zinc-200/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
               )}
             </a>
           ))}

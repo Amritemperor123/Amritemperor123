@@ -39,17 +39,17 @@ export const Projects = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {projects.map((project, i) => (
           <motion.article
             key={i}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="group relative rounded-[1.5rem] overflow-hidden border border-white/10 bg-[#18181f]/70 backdrop-blur-sm"
+            transition={{ delay: i * 0.05 }}
+            className="group relative rounded-xl overflow-hidden border border-white/10 bg-[#18181f]/70 backdrop-blur-sm flex flex-col"
           >
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-[16/10] overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
@@ -58,26 +58,26 @@ export const Projects = () => {
               />
             </div>
 
-            <div className="p-7">
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <h3 className="text-2xl font-semibold text-white tracking-tight">{project.title}</h3>
-                <div className="flex gap-3">
-                  <button className="h-9 w-9 rounded-full border border-white/15 bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center justify-center">
-                    <Github className="w-4 h-4" />
+            <div className="p-4 flex flex-col flex-grow">
+              <div className="flex items-start justify-between gap-3 mb-2">
+                <h3 className="text-lg font-semibold text-white tracking-tight leading-tight">{project.title}</h3>
+                <div className="flex gap-2 shrink-0">
+                  <button className="h-7 w-7 rounded-full border border-white/15 bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center justify-center">
+                    <Github className="w-3.5 h-3.5" />
                   </button>
-                  <button className="h-9 w-9 rounded-full border border-white/15 bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center justify-center">
-                    <ExternalLink className="w-4 h-4" />
+                  <button className="h-7 w-7 rounded-full border border-white/15 bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center justify-center">
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
 
-              <p className="text-slate-300 mb-6 leading-relaxed">{project.desc}</p>
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed flex-grow">{project.desc}</p>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 mt-auto">
                 {project.tech.map((t, j) => (
                   <span
                     key={j}
-                    className="px-3 py-1.5 rounded-full border border-zinc-200/20 bg-zinc-100/10 text-zinc-100 text-xs tracking-[0.08em] section-kicker"
+                    className="px-2 py-1 rounded bg-zinc-100/5 text-zinc-300 text-[10px] tracking-wider uppercase font-medium"
                   >
                     {t}
                   </span>
@@ -85,7 +85,7 @@ export const Projects = () => {
               </div>
             </div>
 
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-zinc-200/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-zinc-200/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.article>
         ))}
       </div>
