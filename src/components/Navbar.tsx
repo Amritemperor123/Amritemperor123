@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  Terminal, 
-  Moon, 
-  Sun, 
-  Github, 
-  Linkedin, 
-  Mail, 
-  FileText, 
-  Menu, 
-  X 
+import {
+  Terminal,
+  Moon,
+  Sun,
+  Github,
+  Linkedin,
+  Mail,
+  FileText,
+  Menu,
+  X
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -32,22 +32,19 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
   ];
 
   return (
-    <header 
+    <header
       id="navbar"
       className="sticky top-0 z-40 w-full backdrop-blur-md border-b transition-colors duration-200 bg-[#090d16]/85 border-slate-800/80 text-slate-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 flex items-center justify-between">
         {/* Clean Logo / Prompt */}
-        <a 
+        <a
           id="nav-logo"
-          href="#" 
+          href="#"
           className="flex items-center gap-1.5 group font-mono text-sm tracking-tight text-slate-200 hover:text-emerald-400 transition-colors"
         >
           <Terminal className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-          <span className="font-bold text-slate-100">amrit</span>
-          <span className="text-emerald-500">@</span>
-          <span className="text-slate-400">dev</span>
-          <span className="text-emerald-400 font-semibold">:~$</span>
+          <span className="font-bold text-slate-100">Amrit</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -142,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div 
+        <div
           id="mobile-nav-drawer"
           className="md:hidden border-t border-slate-800 bg-[#090d16]/95 px-4 pt-3 pb-5 space-y-1 font-mono text-sm"
         >

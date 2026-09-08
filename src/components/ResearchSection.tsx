@@ -10,12 +10,9 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ onSelectSkill 
   return (
     <section id="research" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="mb-10">
-          <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-            05 / Investigations
-          </div>
           <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
             Applied Research &amp; R&amp;D
           </h2>
@@ -32,7 +29,7 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ onSelectSkill 
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
           {/* Research Contributions */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="font-mono text-xs font-bold text-slate-200 uppercase tracking-wider">

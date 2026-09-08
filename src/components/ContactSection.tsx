@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  Linkedin, 
-  Github, 
-  Copy, 
-  Check, 
-  Send, 
-  Terminal, 
-  MapPin, 
-  ArrowUpRight 
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Copy,
+  Check,
+  Send,
+  Terminal,
+  MapPin,
+  ArrowUpRight
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -45,24 +45,21 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="mb-10">
-          <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-            07 / Communication
-          </div>
           <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
             Initiate Contact
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Column: Direct channels */}
           <div className="lg:col-span-6 space-y-6 font-mono text-xs">
             <p className="text-slate-300 text-base leading-relaxed font-sans">
-              I am open to roles and technical engineering projects in 
-              <strong className="text-slate-100 font-semibold"> AI Systems, LLM Infrastructure, Backend Engineering</strong>, and 
+              I am open to roles and technical engineering projects in
+              <strong className="text-slate-100 font-semibold"> AI Systems, LLM Infrastructure, Backend Engineering</strong>, and
               <strong className="text-slate-100 font-semibold"> Edge Computer Vision</strong>.
             </p>
 

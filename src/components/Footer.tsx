@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-[#090d16] py-10 font-mono text-xs text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-800">
-          
+
           {/* Logo & Identity */}
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-200">{PERSONAL_INFO.name}</span>
@@ -64,10 +64,6 @@ export const Footer: React.FC = () => {
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
           <div>
             &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Built with React, TypeScript &amp; Tailwind CSS.
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>Local-First &amp; Systems Engineering</span>
           </div>
         </div>
 

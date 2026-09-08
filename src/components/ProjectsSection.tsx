@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { 
-  Github, 
-  ExternalLink, 
-  Layers, 
-  Search, 
-  Filter, 
-  ChevronRight, 
+import {
+  Github,
+  ExternalLink,
+  Layers,
+  Search,
+  Filter,
+  ChevronRight,
   Star,
   CheckCircle2,
   Terminal,
@@ -48,7 +48,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       (t) => t.toLowerCase() === selectedSkill.toLowerCase()
     );
 
-    const matchesSearch = !searchQuery || 
+    const matchesSearch = !searchQuery ||
       proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       proj.hook.toLowerCase().includes(searchQuery.toLowerCase()) ||
       proj.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -62,25 +62,22 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   return (
     <section id="projects" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-              04 / Portfolio
-            </div>
             <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
               Engineered Systems &amp; Projects
             </h2>
           </div>
           <span className="font-mono text-xs text-slate-500">
-            {filteredProjects.length} systems indexed
+            {filteredProjects.length} Projects Listed
           </span>
         </div>
 
         {/* Filter Controls Row: Categories & Search */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-800/60">
-          
+
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
             {categories.map((cat) => (
@@ -153,7 +150,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {featuredProjects.length > 0 && (
           <div className="mb-14 space-y-6">
             <div className="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider">
-              Core Featured Architectures
+              Featured Projects
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -207,7 +204,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     </div>
 
                     {/* Title */}
-                    <h3 
+                    <h3
                       onClick={() => setSelectedProject(project)}
                       className="font-mono text-xl font-bold text-slate-100 group-hover:text-emerald-300 transition-colors cursor-pointer"
                     >
@@ -252,7 +249,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       onClick={() => setSelectedProject(project)}
                       className="self-start sm:self-auto font-mono text-xs text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1 cursor-pointer shrink-0"
                     >
-                      <span>Architectural Specs</span>
+                      <span>Learn More</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -267,7 +264,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {otherProjects.length > 0 && (
           <div>
             <div className="font-mono text-xs text-slate-400 font-bold uppercase tracking-wider mb-4">
-              System Ledger &amp; Tooling Index
+              More Projects
             </div>
 
             <div className="border border-slate-800 bg-[#090d16] divide-y divide-slate-800/80 font-mono text-xs">
@@ -280,7 +277,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     <div className="flex items-center gap-2">
                       <span className="text-[10px] text-emerald-400 font-semibold uppercase">{project.category}</span>
                     </div>
-                    <h4 
+                    <h4
                       onClick={() => setSelectedProject(project)}
                       className="font-bold text-slate-100 text-sm hover:text-emerald-300 transition-colors cursor-pointer"
                     >

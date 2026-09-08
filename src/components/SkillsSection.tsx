@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  Code2, 
-  Cpu, 
-  Terminal, 
-  Server, 
-  Layout, 
-  Database, 
-  Cloud, 
-  Microchip, 
-  Wrench, 
+import {
+  Code2,
+  Cpu,
+  Terminal,
+  Server,
+  Layout,
+  Database,
+  Cloud,
+  Microchip,
+  Wrench,
   Search,
   Filter,
   Check,
@@ -39,13 +39,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ selectedSkill, onS
   return (
     <section id="skills" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-              02 / Stack &amp; Tooling
-            </div>
             <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
               Technical Capabilities
             </h2>

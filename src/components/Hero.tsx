@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Terminal as TerminalIcon, 
-  ArrowRight, 
-  FileText, 
-  Mail, 
-  Check, 
-  Copy, 
+import {
+  Terminal as TerminalIcon,
+  ArrowRight,
+  FileText,
+  Mail,
+  Check,
+  Copy,
   Sparkles,
   Play,
   RotateCcw
@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
     },
     {
       cmd: 'status',
-      output: '● [ACTIVE] Open to opportunities in AI Infra, Distributed Systems & LLM Tooling'
+      output: 'Open to opportunities in AI, Distributed Systems & Software Engineering'
     },
     {
       cmd: 'cat ethos.txt',
@@ -79,10 +79,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         output = 'Available commands: whoami, status, stack, projects, contact, resume, clear, exit';
         break;
       case 'whoami':
-        output = 'Amrit Lal Paswan — AI Systems & Software Engineer | B.Tech CSE';
+        output = 'Amrit Lal Paswan — AI & Software Engineer | B.Tech CSE';
         break;
       case 'status':
-        output = '● Open to opportunities for AI Systems, Backend Infrastructure, and Developer Tooling.';
+        output = 'Open to opportunities for AI, Distributed Systems & Software Engineering';
         break;
       case 'stack':
       case 'skills':
@@ -128,45 +128,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
     <section id="hero" className="relative pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
+
           {/* Left Column: Monospace Name, Identity, Positioning & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            
-            {/* Status indicator */}
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span className="text-emerald-400 font-medium">Open to opportunities</span>
-              <span className="text-slate-600">·</span>
-              <span>Noida, India</span>
-            </div>
 
             {/* Name in high-impact monospace typography */}
             <div>
-              <h1 
+              <h1
                 id="hero-name"
                 className="font-mono text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-100 uppercase"
               >
                 {PERSONAL_INFO.name}
               </h1>
-
-              {/* Cycling Role with Blinking Cursor */}
-              <div 
-                id="hero-role-cycle"
-                className="mt-2.5 font-mono text-lg sm:text-xl text-emerald-400 font-medium flex items-center min-h-[32px]"
-              >
-                <span className="text-slate-500 mr-2">$</span>
-                <span>{displayedRole}</span>
-                <span className="w-2 h-5 ml-1 bg-emerald-400 animate-cursor-blink inline-block"></span>
-              </div>
             </div>
 
             {/* Core positioning statement */}
-            <p 
+            <p
               id="hero-positioning"
               className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal"
             >
-              Engineers <strong className="text-slate-100 font-semibold">privacy-first LLM developer tools</strong>, 
-              containerized execution environments, and <strong className="text-slate-100 font-semibold">domain-adapted AI systems</strong> end-to-end. 
+              Engineers <strong className="text-slate-100 font-semibold">privacy-first LLM developer tools</strong>,
+              containerized execution environments, and <strong className="text-slate-100 font-semibold">domain-adapted AI systems</strong> end-to-end.
               Focused on Linux-first runtime efficiency and local hardware acceleration.
             </p>
 
@@ -224,98 +206,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-          </div>
-
-          {/* Right Column: Signature Terminal Prompt Motif */}
-          <div className="lg:col-span-5">
-            <div 
-              id="hero-terminal-card"
-              className="rounded border border-slate-800 bg-[#070a0e] shadow-xl overflow-hidden font-mono text-xs"
-            >
-              {/* Terminal Window Title Bar */}
-              <div className="px-4 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
-                  </div>
-                  <span className="ml-2 text-slate-400 text-[11px]">amrit@dev: ~</span>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] text-slate-500">
-                  <button 
-                    onClick={() => handleRunCommand('clear')}
-                    title="Reset terminal"
-                    className="p-1 hover:text-slate-300 transition-colors cursor-pointer"
-                  >
-                    <RotateCcw className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Terminal Content Body */}
-              <div className="p-4 space-y-3 max-h-[320px] overflow-y-auto">
-                <div className="text-slate-500 text-[11px] leading-relaxed pb-1 border-b border-slate-800/60">
-                  Amrit Lal Paswan — AI Systems Console<br />
-                  Try running commands: <span className="text-emerald-400">'whoami'</span>, <span className="text-emerald-400">'stack'</span>, <span className="text-emerald-400">'projects'</span>
-                </div>
-
-                {/* History */}
-                {terminalHistory.map((item, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <span className="text-emerald-400">amrit@dev:~$</span>
-                      <span className="font-semibold text-slate-100">{item.cmd}</span>
-                    </div>
-                    <div className="pl-4 text-slate-400 text-[11px] leading-relaxed whitespace-pre-wrap border-l border-slate-800/80">
-                      {item.output}
-                    </div>
-                  </div>
-                ))}
-
-                {/* Live Input Line */}
-                <form 
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handleRunCommand();
-                  }}
-                  className="flex items-center gap-1.5 pt-1"
-                >
-                  <span className="text-emerald-400 font-bold shrink-0">amrit@dev:~$</span>
-                  <input
-                    id="hero-terminal-input"
-                    type="text"
-                    value={terminalInput}
-                    onChange={(e) => setTerminalInput(e.target.value)}
-                    placeholder="type command..."
-                    className="w-full bg-transparent text-slate-200 placeholder-slate-600 focus:outline-none font-mono text-xs"
-                    autoComplete="off"
-                    spellCheck="false"
-                  />
-                  <button
-                    type="submit"
-                    className="p-1 text-slate-500 hover:text-emerald-400 transition-colors shrink-0 cursor-pointer"
-                    aria-label="Run command"
-                  >
-                    <Play className="w-3 h-3" />
-                  </button>
-                </form>
-              </div>
-
-              {/* Quick Command Chips */}
-              <div className="px-4 py-2 bg-slate-900/60 border-t border-slate-800 flex flex-wrap items-center gap-1 text-[11px]">
-                <span className="text-slate-500 mr-1 text-[10px]">Commands:</span>
-                {['projects', 'stack', 'whoami', 'contact', 'clear'].map((cmd) => (
-                  <button
-                    key={cmd}
-                    onClick={() => handleRunCommand(cmd)}
-                    className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 hover:text-emerald-300 transition-colors cursor-pointer"
-                  >
-                    {cmd}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
         </div>

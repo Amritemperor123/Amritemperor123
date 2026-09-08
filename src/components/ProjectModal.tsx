@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  X, 
-  Github, 
-  ExternalLink, 
-  Terminal, 
-  Layers, 
-  Cpu, 
-  CheckCircle2 
+import {
+  X,
+  Github,
+  ExternalLink,
+  Terminal,
+  Layers,
+  Cpu,
+  CheckCircle2
 } from 'lucide-react';
 import { Project } from '../types';
 
@@ -20,12 +20,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
   if (!project) return null;
 
   return (
-    <div 
+    <div
       id="project-modal-backdrop"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
     >
-      <div 
+      <div
         id="project-modal-dialog"
         className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded border border-slate-700 bg-[#090d16] text-slate-200 shadow-2xl p-6 sm:p-8"
         onClick={(e) => e.stopPropagation()}
@@ -47,7 +47,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
           </span>
           {project.featured && (
             <span className="px-2 py-0.5 rounded bg-slate-800 text-amber-300 border border-amber-500/30">
-              Featured Architecture
+              Featured
             </span>
           )}
         </div>
@@ -94,7 +94,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
         {/* Architecture Highlights */}
         <div className="mb-6 space-y-3">
           <h4 className="font-mono text-xs font-bold text-slate-200 uppercase tracking-wider">
-            Architecture Highlights
+            Highlights
           </h4>
           <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-sans">
             {project.architectureHighlights.map((highlight, idx) => (
@@ -136,7 +136,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               className="inline-flex items-center gap-2 px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-semibold transition-colors"
             >
               <Github className="w-4 h-4" />
-              <span>Inspect Repository</span>
+              <span>View Repository</span>
             </a>
           )}
 
@@ -148,7 +148,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               className="inline-flex items-center gap-2 px-4 py-2 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono text-xs font-semibold transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              <span>View Model Weights</span>
+              <span>View Model</span>
             </a>
           )}
 

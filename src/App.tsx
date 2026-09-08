@@ -41,18 +41,18 @@ export default function App() {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark bg-[#0b0f14] text-[#e2e8f0]' : 'bg-slate-50 text-slate-900'} transition-colors duration-200`}>
-      
+
       {/* Sticky Minimal Navbar */}
-      <Navbar 
-        darkMode={darkMode} 
-        setDarkMode={setDarkMode} 
-        onOpenResume={() => setIsResumeOpen(true)} 
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        onOpenResume={() => setIsResumeOpen(true)}
       />
 
       {/* Main Portfolio Sections */}
       <main id="main-content" className="relative">
         {/* 1. Hero Section */}
-        <Hero 
+        <Hero
           onOpenResume={() => setIsResumeOpen(true)}
           onFilterSkill={handleSelectSkill}
         />
@@ -61,25 +61,25 @@ export default function App() {
         <AboutSection />
 
         {/* 3. Technical Skills Matrix */}
-        <SkillsSection 
+        <SkillsSection
           selectedSkill={selectedSkill}
           onSelectSkill={handleSelectSkill}
         />
 
         {/* 4. Experience Timeline */}
-        <ExperienceSection 
+        <ExperienceSection
           onSelectSkill={handleSelectSkill}
         />
 
         {/* 5. Featured Projects & Systems Grid */}
-        <ProjectsSection 
+        <ProjectsSection
           selectedSkill={selectedSkill}
           onClearSkillFilter={() => setSelectedSkill(null)}
           onSelectSkill={handleSelectSkill}
         />
 
         {/* 6. Applied Research & Investigations */}
-        <ResearchSection 
+        <ResearchSection
           onSelectSkill={handleSelectSkill}
         />
 
@@ -94,7 +94,7 @@ export default function App() {
       <Footer />
 
       {/* Interactive Printable / Exportable Resume Modal */}
-      <ResumeModal 
+      <ResumeModal
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
       />

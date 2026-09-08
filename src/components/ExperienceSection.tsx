@@ -10,12 +10,9 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onSelectSk
   return (
     <section id="experience" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="mb-10">
-          <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-            03 / History
-          </div>
           <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
             Work &amp; Research Experience
           </h2>
@@ -25,7 +22,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onSelectSk
         <div className="space-y-12">
           {EXPERIENCE_LIST.map((exp) => (
             <div key={exp.id} className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 pb-10 border-b border-slate-800/60 last:border-0 last:pb-0">
-              
+
               {/* Left Column: Role & Metadata */}
               <div className="lg:col-span-4 space-y-1.5 font-mono">
                 <div className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">

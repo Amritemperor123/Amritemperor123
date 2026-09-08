@@ -1,31 +1,28 @@
 import React from 'react';
-import { 
-  Trophy, 
-  GitPullRequest, 
-  Radio, 
-  Github, 
-  ExternalLink, 
-  Calendar, 
-  MapPin, 
+import {
+  Trophy,
+  GitPullRequest,
+  Radio,
+  Github,
+  ExternalLink,
+  Calendar,
+  MapPin,
   Award,
   Sparkles
 } from 'lucide-react';
-import { 
-  HACKATHON_RECOGNITION, 
-  OPEN_SOURCE_PROJECTS, 
-  WORKSHOPS_CONFERENCES 
+import {
+  HACKATHON_RECOGNITION,
+  OPEN_SOURCE_PROJECTS,
+  WORKSHOPS_CONFERENCES
 } from '../data/portfolioData';
 
 export const RecognitionSection: React.FC = () => {
   return (
     <section id="recognition" className="py-16 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        
+
         {/* Section Header */}
         <div>
-          <div className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-1">
-            06 / Distinction
-          </div>
           <h2 className="font-mono text-2xl sm:text-3xl font-bold tracking-tight text-slate-100 uppercase">
             Recognition, Open Source &amp; Talks
           </h2>
@@ -35,7 +32,7 @@ export const RecognitionSection: React.FC = () => {
         <div className="border border-amber-500/40 bg-[#090d16] p-6 sm:p-8 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-xs bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40">
+              <span className="px-2 py-0.5 rounded text-xs bg-amber-500/20 text-grey-300 font-bold border border-amber-500/40">
                 {HACKATHON_RECOGNITION.result}
               </span>
               <span className="text-xs text-slate-400">
@@ -51,7 +48,7 @@ export const RecognitionSection: React.FC = () => {
             <h3 className="font-mono text-xl sm:text-2xl font-bold text-slate-100">
               {HACKATHON_RECOGNITION.title}
             </h3>
-            <div className="text-xs font-mono text-amber-400/90 mt-1">
+            <div className="text-xs font-mono text-grey-400/90 mt-1">
               {HACKATHON_RECOGNITION.host}
             </div>
           </div>
@@ -64,7 +61,7 @@ export const RecognitionSection: React.FC = () => {
             {HACKATHON_RECOGNITION.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-200/90"
+                className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-grey-200/90"
               >
                 {tag}
               </span>
@@ -74,7 +71,7 @@ export const RecognitionSection: React.FC = () => {
 
         {/* Two-Column Grid: Open Source & Conferences */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
+
           {/* Open Source Contribution */}
           <div className="lg:col-span-6 space-y-4">
             <h3 className="font-mono text-xs font-bold text-slate-200 uppercase tracking-wider">
