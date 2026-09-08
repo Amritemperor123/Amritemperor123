@@ -1,5 +1,6 @@
 {
-  "name": "Nexus Portfolio",
-  "description": "A futuristic 3D developer portfolio showcasing AI, automation, and interactive web engineering.",
-  "requestFramePermissions": []
+  "name": "Amrit Lal Paswan - Developer Portfolio",
+  "description": "Software Developer and AI Systems Engineer portfolio showcasing local-first LLM tooling, containerized infrastructure, computer vision, and research.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

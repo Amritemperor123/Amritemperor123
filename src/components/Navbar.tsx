@@ -1,75 +1,172 @@
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import { 
+  Terminal, 
+  Moon, 
+  Sun, 
+  Github, 
+  Linkedin, 
+  Mail, 
+  FileText, 
+  Menu, 
+  X 
+} from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
 
-const navItems = ["Hero", "Projects", "Skills", "Freelancing", "Contact"];
+interface NavbarProps {
+  darkMode: boolean;
+  setDarkMode: (val: boolean) => void;
+  onOpenResume: () => void;
+}
 
-export const Navbar = () => {
-  const [active, setActive] = useState("Hero");
-  const [scrolled, setScrolled] = useState(false);
+export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenResume }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      const sections = navItems.map((item) => document.getElementById(item.toLowerCase()));
-      const current = sections.find((section) => {
-        if (!section) return false;
-        const rect = section.getBoundingClientRect();
-        return rect.top <= 120 && rect.bottom >= 120;
-      });
-
-      if (current) setActive(current.id.charAt(0).toUpperCase() + current.id.slice(1));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Research', href: '#research' },
+    { name: 'Recognition', href: '#recognition' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-4 bg-[#0d0d12]/80 backdrop-blur-xl border-b border-white/10"
-          : "py-6 bg-transparent"
-      }`}
+    <header 
+      id="navbar"
+      className="sticky top-0 z-40 w-full backdrop-blur-md border-b transition-colors duration-200 bg-[#090d16]/85 border-slate-800/80 text-slate-200"
     >
-      <div className="px-6 md:px-20 flex items-center justify-between gap-4">
-        <a href="#hero" className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl border border-white/15 bg-white/5 flex items-center justify-center">
-            <div className="h-4 w-4 rounded-sm bg-gradient-to-br from-zinc-200 to-zinc-400 rotate-12" />
-          </div>
-          <span className="nav-brand text-white font-semibold tracking-wide text-lg">Amrit.</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 flex items-center justify-between">
+        {/* Clean Logo / Prompt */}
+        <a 
+          id="nav-logo"
+          href="#" 
+          className="flex items-center gap-1.5 group font-mono text-sm tracking-tight text-slate-200 hover:text-emerald-400 transition-colors"
+        >
+          <Terminal className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+          <span className="font-bold text-slate-100">amrit</span>
+          <span className="text-emerald-500">@</span>
+          <span className="text-slate-400">dev</span>
+          <span className="text-emerald-400 font-semibold">:~$</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
+        {/* Desktop Navigation Links */}
+        <nav id="desktop-nav" className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={`text-xs uppercase tracking-[0.2em] transition-colors relative section-kicker group ${
-                active === item ? "text-zinc-100" : "text-zinc-400 hover:text-zinc-100"
-              }`}
+              key={link.name}
+              id={`nav-link-${link.name.toLowerCase()}`}
+              href={link.href}
+              className="px-3 py-1.5 text-xs font-mono text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded transition-colors"
             >
-              {item}
-              {active === item ? (
-                <motion.div
-                  layoutId="activeNav"
-                  className="absolute -bottom-2 left-0 h-[1px] w-full bg-zinc-200/80"
-                />
-              ) : (
-                <span className="absolute -bottom-2 left-0 h-[1px] w-full bg-zinc-200/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-              )}
+              {link.name}
             </a>
           ))}
-        </div>
+        </nav>
 
-        <a
-          href="#contact"
-          className="px-5 py-2.5 rounded-full bg-zinc-100 text-zinc-900 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-white transition-colors"
-        >
-          Let&apos;s Talk
-        </a>
+        {/* Actions (Socials + Resume + Theme + Mobile Toggle) */}
+        <div id="nav-actions" className="flex items-center gap-1.5 sm:gap-2">
+          {/* GitHub link */}
+          <a
+            id="nav-github-link"
+            href={PERSONAL_INFO.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+            className="p-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 rounded transition-colors"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+
+          {/* LinkedIn link */}
+          <a
+            id="nav-linkedin-link"
+            href={PERSONAL_INFO.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+            className="p-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 rounded transition-colors"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+
+          {/* Email link */}
+          <a
+            id="nav-email-link"
+            href={`mailto:${PERSONAL_INFO.email}`}
+            aria-label="Send Email"
+            className="p-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 rounded transition-colors hidden sm:inline-flex"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
+
+          <div className="h-4 w-px bg-slate-800 mx-1 hidden sm:block"></div>
+
+          {/* Resume Modal trigger */}
+          <button
+            id="nav-resume-btn"
+            onClick={onOpenResume}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500 transition-all cursor-pointer"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Resume</span>
+            <span className="sm:hidden">CV</span>
+          </button>
+
+          {/* Theme Toggle (Dark / Light) */}
+          <button
+            id="theme-toggle-btn"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+            className="p-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 rounded transition-colors cursor-pointer"
+            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
+            {darkMode ? (
+              <Sun className="w-4 h-4 text-amber-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-slate-700" />
+            )}
+          </button>
+
+          {/* Mobile Menu Hamburger Button */}
+          <button
+            id="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+            className="p-1.5 md:hidden text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 rounded transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
-    </nav>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div 
+          id="mobile-nav-drawer"
+          className="md:hidden border-t border-slate-800 bg-[#090d16]/95 px-4 pt-3 pb-5 space-y-1 font-mono text-sm"
+        >
+          <div className="text-[10px] text-slate-500 uppercase tracking-wider px-3 py-1">Navigation</div>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-colors"
+            >
+              <span className="text-emerald-500 mr-2">›</span>
+              {link.name}
+            </a>
+          ))}
+          <div className="pt-2 border-t border-slate-800 flex items-center justify-between px-3">
+            <span className="text-xs text-slate-400">Status:</span>
+            <span className="text-xs text-emerald-400 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Open to opportunities
+            </span>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
