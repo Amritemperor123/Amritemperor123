@@ -290,7 +290,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </div>
 
                   <div className="md:col-span-3 flex items-center justify-between md:justify-end gap-3 pt-2 md:pt-0 border-t md:border-t-0 border-slate-800">
-                    <div className="flex flex-wrap gap-1 max-w-[160px]">
+                    <div className="flex flex-wrap gap-1 max-w-40">
                       {project.tags.slice(0, 2).map((tag) => (
                         <button
                           key={tag}

@@ -23,24 +23,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const [displayedRole, setDisplayedRole] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const roles = PERSONAL_INFO.roleRotations;
-
-  // Interactive Terminal State
-  const [terminalInput, setTerminalInput] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [terminalHistory, setTerminalHistory] = useState<Array<{ cmd: string; output: string }>>([
-    {
-      cmd: 'whoami',
-      output: 'Amrit Lal Paswan — AI Systems & Software Engineer (Noida, India)'
-    },
-    {
-      cmd: 'status',
-      output: 'Open to opportunities in AI, Distributed Systems & Software Engineering'
-    },
-    {
-      cmd: 'cat ethos.txt',
-      output: 'Architecture-first. Local-first. Deterministic infrastructure. Privacy-conscious.'
-    }
-  ]);
 
   // Typewriter effect logic
   useEffect(() => {
@@ -67,56 +50,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
     return () => clearTimeout(timer);
   }, [displayedRole, isDeleting, roleIndex, roles]);
-
-  // Handle terminal command execution
-  const handleRunCommand = (commandToRun?: string) => {
-    const cmd = (commandToRun || terminalInput).trim().toLowerCase();
-    if (!cmd) return;
-
-    let output = '';
-    switch (cmd) {
-      case 'help':
-        output = 'Available commands: whoami, status, stack, projects, contact, resume, clear, exit';
-        break;
-      case 'whoami':
-        output = 'Amrit Lal Paswan — AI & Software Engineer | B.Tech CSE';
-        break;
-      case 'status':
-        output = 'Open to opportunities for AI, Distributed Systems & Software Engineering';
-        break;
-      case 'stack':
-      case 'skills':
-        output = 'C, C++, Python, PyTorch, llama.cpp, Docker, Kafka, FastAPI, React, PostgreSQL, PostGIS';
-        break;
-      case 'projects':
-        output = 'Featured: LM Studio CLI Agent, Multi-Agent Orchestrator, 8B Medical LLM, Wordrobe, Sandwitch, Kafka-Microservice';
-        const projEl = document.getElementById('projects');
-        if (projEl) projEl.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'contact':
-        output = `Email: ${PERSONAL_INFO.email} | Phone: ${PERSONAL_INFO.phone} | GitHub: ${PERSONAL_INFO.githubUsername}`;
-        const contactEl = document.getElementById('contact');
-        if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'resume':
-      case 'cv':
-        output = 'Launching resume view dialog...';
-        onOpenResume();
-        break;
-      case 'clear':
-        setTerminalHistory([]);
-        setTerminalInput('');
-        return;
-      case 'exit':
-        output = 'Process terminated with code 0. Thanks for visiting!';
-        break;
-      default:
-        output = `bash: command not found: ${cmd}. Type 'help' for available commands.`;
-    }
-
-    setTerminalHistory((prev) => [...prev, { cmd, output }]);
-    setTerminalInput('');
-  };
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -147,8 +80,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               id="hero-positioning"
               className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal"
             >
-              Engineers <strong className="text-slate-100 font-semibold">privacy-first LLM developer tools</strong>,
-              containerized execution environments, and <strong className="text-slate-100 font-semibold">domain-adapted AI systems</strong> end-to-end.
+              Engineers <strong className="text-slate-100 font-semibold">Privacy-First Developer Tools</strong>,
+              containerized execution environments, and <strong className="text-slate-100 font-semibold">Smart Systems</strong> end-to-end.
               Focused on Linux-first runtime efficiency and local hardware acceleration.
             </p>
 

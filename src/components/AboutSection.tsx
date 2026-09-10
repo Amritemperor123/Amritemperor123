@@ -28,20 +28,20 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-4 text-slate-300 text-base leading-relaxed font-sans">
               <p>
-                I build systems architecture-first — designing cohesive, deterministic software rather than loose scripts.
-                My focus spans <strong className="text-slate-100 font-semibold">LLM engineering</strong> (autonomous multi-agent DAGs, RAG, domain LoRA fine-tuning),
-                <strong className="text-slate-100 font-semibold"> backend infrastructure</strong> (Kafka event streaming, Docker, Kubernetes, microservice telemetry),
-                and <strong className="text-slate-100 font-semibold">edge computer vision</strong> (OpenCV, YOLO, TensorRT).
+                I build smart solutions — designing cohesive, deterministic software rather than loose scripts.
+                My focus spans <strong className="text-slate-100 font-semibold">AI Engineering</strong> (autonomous multi-agent DAGs, RAG, domain adapive fine-tuning),
+                <strong className="text-slate-100 font-semibold"> Backend Infrastructure</strong> (Kafka event streaming, Docker, Kubernetes, microservice telemetry),
+                and <strong className="text-slate-100 font-semibold">Edge Computing</strong> (Prometheus, Grafana, Telegraf, MQTT).
               </p>
 
               <p>
                 A core principle running through my work is <strong className="text-emerald-400 font-semibold">local-first, sovereign AI compute</strong>.
-                From terminal-native coding assistants to quantized C++ desktop tools and offline VS Code extensions,
+                From terminal-native coding assistants to C++ desktop tools and offline VS Code extensions,
                 I design software that keeps data private, eliminates SaaS vendor lock-in, and maximizes local hardware throughput.
               </p>
 
               <p>
-                Currently completing my B.Tech in Computer Science at Noida, India, I have combined lab research at <span className="text-slate-100 font-semibold">NCC Lab, IIT BHU</span> with industrial engineering internships.
+                After completing my B.Tech in Computer Science at <span className="text-slate-100 font-semibold" href="https://www.cujammu.ac.in/">Central University of Jammu</span>, and lab research internship at <span className="text-slate-100 font-semibold">NCC Lab, IIT BHU</span> in real world projects, I have joined <span className="text-slate-100 font-semibold" href="https://www.cloudsciencelabs.com/">Cloud Science Labs</span> as a <span className="text-slate-100 font-semibold">Solutions Engineer</span>.
               </p>
             </div>
 
@@ -57,12 +57,12 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div className="border-l-2 border-emerald-500 pl-3 py-0.5">
-                  <div className="font-semibold text-slate-100">Local-First Compute</div>
+                  <div className="font-semibold text-slate-100">Local-First</div>
                   <div className="text-slate-400 text-[11px] mt-0.5 font-sans">llama.cpp backends, on-device GGUF models, low latency.</div>
                 </div>
 
                 <div className="border-l-2 border-emerald-500 pl-3 py-0.5">
-                  <div className="font-semibold text-slate-100">Linux &amp; POSIX Native</div>
+                  <div className="font-semibold text-slate-100">Linux Native</div>
                   <div className="text-slate-400 text-[11px] mt-0.5 font-sans">Containerized microservices, Bash scripts, IPC sockets.</div>
                 </div>
 

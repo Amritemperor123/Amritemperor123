@@ -84,11 +84,6 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ onSelectSkill 
                   </span>
                 ))}
               </div>
-
-              <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-500 flex items-center justify-between">
-                <span>Lab Association:</span>
-                <span className="text-slate-200 font-mono">NCC Lab, IIT BHU</span>
-              </div>
             </div>
           </div>
 
